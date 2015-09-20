@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Stores a question and its associated answer candidates.
- * Updated by JCasGen Sat Sep 19 13:28:07 EDT 2015
+ * Updated by JCasGen Sat Sep 19 18:13:45 EDT 2015
  * @generated */
 public class InputDocument_Type extends ComponentAnnotation_Type {
   /** @generated 
@@ -91,7 +91,34 @@ public class InputDocument_Type extends ComponentAnnotation_Type {
       jcas.throwFeatMissing("answers", "type.InputDocument");
     ll_cas.ll_setRefValue(addr, casFeatCode_answers, v);}
     
-  
+   /** @generated
+   * @param addr low level Feature Structure reference
+   * @param i index of item in the array
+   * @return value at index i in the array 
+   */
+  public int getAnswers(int addr, int i) {
+        if (featOkTst && casFeat_answers == null)
+      jcas.throwFeatMissing("answers", "type.InputDocument");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answers), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_answers), i);
+  return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answers), i);
+  }
+   
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param i index of item in the array
+   * @param v value to set
+   */ 
+  public void setAnswers(int addr, int i, int v) {
+        if (featOkTst && casFeat_answers == null)
+      jcas.throwFeatMissing("answers", "type.InputDocument");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answers), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_answers), i);
+    ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answers), i, v);
+  }
+ 
 
 
 
@@ -109,7 +136,7 @@ public class InputDocument_Type extends ComponentAnnotation_Type {
     casFeatCode_question  = (null == casFeat_question) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_question).getCode();
 
  
-    casFeat_answers = jcas.getRequiredFeatureDE(casType, "answers", "uima.cas.FSList", featOkTst);
+    casFeat_answers = jcas.getRequiredFeatureDE(casType, "answers", "uima.cas.FSArray", featOkTst);
     casFeatCode_answers  = (null == casFeat_answers) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_answers).getCode();
 
   }

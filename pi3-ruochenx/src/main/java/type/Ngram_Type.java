@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Stores the information about an n-gram.
- * Updated by JCasGen Sat Sep 19 13:28:07 EDT 2015
+ * Updated by JCasGen Sat Sep 19 18:13:45 EDT 2015
  * @generated */
 public class Ngram_Type extends ComponentAnnotation_Type {
   /** @generated 
@@ -91,7 +91,34 @@ public class Ngram_Type extends ComponentAnnotation_Type {
       jcas.throwFeatMissing("tokens", "type.Ngram");
     ll_cas.ll_setRefValue(addr, casFeatCode_tokens, v);}
     
-  
+   /** @generated
+   * @param addr low level Feature Structure reference
+   * @param i index of item in the array
+   * @return value at index i in the array 
+   */
+  public int getTokens(int addr, int i) {
+        if (featOkTst && casFeat_tokens == null)
+      jcas.throwFeatMissing("tokens", "type.Ngram");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i);
+  return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i);
+  }
+   
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param i index of item in the array
+   * @param v value to set
+   */ 
+  public void setTokens(int addr, int i, int v) {
+        if (featOkTst && casFeat_tokens == null)
+      jcas.throwFeatMissing("tokens", "type.Ngram");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i);
+    ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i, v);
+  }
+ 
 
 
 
@@ -109,7 +136,7 @@ public class Ngram_Type extends ComponentAnnotation_Type {
     casFeatCode_n  = (null == casFeat_n) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_n).getCode();
 
  
-    casFeat_tokens = jcas.getRequiredFeatureDE(casType, "tokens", "uima.cas.FSList", featOkTst);
+    casFeat_tokens = jcas.getRequiredFeatureDE(casType, "tokens", "uima.cas.FSArray", featOkTst);
     casFeatCode_tokens  = (null == casFeat_tokens) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tokens).getCode();
 
   }
