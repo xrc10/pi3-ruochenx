@@ -31,8 +31,8 @@ public class TestElementAnnotator extends JCasAnnotator_ImplBase {
     // found one question - create annotation
     Question questionAnnot = new Question(aJCas);
     if (matcher.find()) { 
-      questionAnnot.setBegin(matcher.start());
-      questionAnnot.setEnd(matcher.end());
+      questionAnnot.setBegin(matcher.start(1));
+      questionAnnot.setEnd(matcher.end(1));
       questionAnnot.setId("0");
       questionAnnot.setSentence(matcher.group(1));
       questionAnnot.setComponentId(this.getClass().getName());
@@ -47,8 +47,8 @@ public class TestElementAnnotator extends JCasAnnotator_ImplBase {
     while (matcher.find()) {
       // found one - create annotation
       Answer answerAnnot = new Answer(aJCas);
-      answerAnnot.setBegin(matcher.start());
-      answerAnnot.setEnd(matcher.end());
+      answerAnnot.setBegin(matcher.start(3));
+      answerAnnot.setEnd(matcher.end(3));
       answerAnnot.setId(matcher.group(1));
       if (matcher.group(2).equals("0")) {
         answerAnnot.setLabel(false);
