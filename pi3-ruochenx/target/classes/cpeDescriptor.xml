@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cpeDescription xmlns="http://uima.apache.org/resourceSpecifier">
-    <casProcessors casPoolSize="3" processingUnitThreadCount="1"/>
+    <collectionReader>
+        <collectionIterator>
+            <descriptor>
+                <import location="fileSystemCollectionReader.xml"/>
+            </descriptor>
+            <configurationParameterSettings>
+                <nameValuePair>
+                    <name>InputDirectory</name>
+                    <value>
+                        <string>/home/ruochenx/git/pi3-ruochenx/pi3-ruochenx/src/main/resources/inputData</string>
+                    </value>
+                </nameValuePair>
+            </configurationParameterSettings>
+        </collectionIterator>
+    </collectionReader>
+    <casProcessors casPoolSize="3" processingUnitThreadCount="1">
+    <casProcessor deployment="integrated" name="aggregateAnnotator">
+        <descriptor>
+            <import location="annotatorDescriptor/aggregateAnnotator.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="Result Writer CAS Consumer">
+        <descriptor>
+            <import location="resultWriterCasConsumer.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+        <configurationParameterSettings>
+            <nameValuePair>
+                <name>OutputDirectory</name>
+                <value>
+                    <string>/home/ruochenx/git/pi3-ruochenx/pi3-ruochenx/src/main/resources/outputData</string>
+                </value>
+            </nameValuePair>
+        </configurationParameterSettings>
+    </casProcessor>
+    </casProcessors>
     <cpeConfig>
         <numToProcess>-1</numToProcess>
         <deployAs>immediate</deployAs>

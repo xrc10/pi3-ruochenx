@@ -102,5 +102,35 @@
         </featureDescription>
       </features>
     </typeDescription>
+  <typeDescription>
+      <name>type.AnswerScore</name>
+      <description>Store the score for each answer.</description>
+      <supertypeName>type.ComponentAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>answer</name>
+          <description>Stores the Answer type for the corresponding score.</description>
+          <rangeTypeName>type.Answer</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  <typeDescription>
+      <name>type.RankedAnswerScore</name>
+      <description>The result of evaluation, which records the ranked list of AnswerScore and a precision for a certain question.</description>
+      <supertypeName>type.ComponentAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>rankedListOfAnswerScore</name>
+          <description>The descending ranked list of AnswerScore instances accroding to scores.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>type.AnswerScore</elementType>
+        </featureDescription>
+        <featureDescription>
+          <name>precision</name>
+          <description>The precision@N, where N is the number of true answers.</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
   </types>
 </typeSystemDescription>

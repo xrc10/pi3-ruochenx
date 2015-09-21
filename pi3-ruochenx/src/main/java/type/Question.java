@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** Stores the information about a question.
- * Updated by JCasGen Sat Sep 19 18:13:45 EDT 2015
+ * Updated by JCasGen Mon Sep 21 09:23:45 EDT 2015
  * XML source: /home/ruochenx/git/pi3-ruochenx/pi3-ruochenx/src/main/resources/typeSystem.xml
  * @generated */
 public class Question extends ComponentAnnotation {

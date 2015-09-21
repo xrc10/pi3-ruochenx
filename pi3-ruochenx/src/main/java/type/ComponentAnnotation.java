@@ -11,10 +11,10 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** A parent annotation which expects individual annotation types to inherit from.
- * Updated by JCasGen Sat Sep 19 18:13:45 EDT 2015
+ * Updated by JCasGen Mon Sep 21 09:23:45 EDT 2015
  * XML source: /home/ruochenx/git/pi3-ruochenx/pi3-ruochenx/src/main/resources/typeSystem.xml
  * @generated */
-public class ComponentAnnotation extends Annotation {
+public class ComponentAnnotation extends Annotation implements Comparable {
   /** @generated
    * @ordered 
    */
@@ -117,7 +117,20 @@ public class ComponentAnnotation extends Annotation {
   public void setScore(double v) {
     if (ComponentAnnotation_Type.featOkTst && ((ComponentAnnotation_Type)jcasType).casFeat_score == null)
       jcasType.jcas.throwFeatMissing("score", "type.ComponentAnnotation");
-    jcasType.ll_cas.ll_setDoubleValue(addr, ((ComponentAnnotation_Type)jcasType).casFeatCode_score, v);}    
+    jcasType.ll_cas.ll_setDoubleValue(addr, ((ComponentAnnotation_Type)jcasType).casFeatCode_score, v);} 
+  
+  // Override compareTo function
+  @Override
+  public int compareTo(Object compareAnnot) {
+    // TODO Auto-generated method stub
+    double compareScore = ((ComponentAnnotation) compareAnnot).getScore();
+    if (compareScore > this.getScore()) {
+      return 1;
+    } else if (compareScore < this.getScore()) {
+      return -1;
+    } else {
+      return 0;
+    }}
   }
 
     
