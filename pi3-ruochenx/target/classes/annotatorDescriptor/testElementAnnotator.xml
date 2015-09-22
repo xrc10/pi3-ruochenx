@@ -4,14 +4,14 @@
   <primitive>true</primitive>  <annotatorImplementationName>annotator.TestElementAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>Test Element Annotator</name>
-    <description>Read input document and output a InputDocument type annotation. This annotator is able to indentify and record the question and answers with  labels.</description>
+    <description>Read input document and output a InputDocument type annotation. This annotator is able to identify and record the question and answers with  labels.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>
     <configurationParameterSettings/>
     <typeSystemDescription>
       <imports>
-        <import location="/home/ruochenx/git/pi3-ruochenx/pi3-ruochenx/src/main/resources/typeSystem.xml"/>
+        <import name="typeSystem"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>

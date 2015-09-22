@@ -70,12 +70,6 @@
         </configurationParameters>
 		<configurationParameterSettings>
 		    <nameValuePair>
-		        <name>InputDirectory</name>
-		        <value>
-		            <string>/home/ruochenx/academic/software/apache-uima/examples/data</string>
-		        </value>
-		    </nameValuePair>
-            <nameValuePair>
                 <name>BrowseSubdirectories</name>
                 <value>
                     <boolean>false</boolean>
@@ -87,13 +81,19 @@
 		            <string>en</string>
 		        </value>
 		    </nameValuePair>
-		</configurationParameterSettings>
+		<nameValuePair>
+        <name>InputDirectory</name>
+        <value>
+          <string>src/main/resources/inputData</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
 
         <!-- Type System of CASes returned by this Collection Reader -->
 
         <typeSystemDescription>
           <imports>
-            <import name="org.apache.uima.examples.SourceDocumentInformation"/>
+            <import name="sourceDocumentInformation"/>
           </imports>
         </typeSystemDescription>
 

@@ -50,7 +50,7 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
     while (nGramIterator.hasNext()) {
       Ngram ngram = (Ngram) nGramIterator.next();
       if (inAnnot(ngram, annot)) {
-        nGramList.add((Ngram) nGramIterator.next());
+        nGramList.add(ngram);
       }
     }
     return nGramList;

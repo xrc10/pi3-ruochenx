@@ -23,7 +23,7 @@ public class NGramAnnotator extends JCasAnnotator_ImplBase {
   public void initialize(UimaContext aContext) throws ResourceInitializationException {
     super.initialize(aContext);
     // Get config. parameter values
-    numberOfNGram = (int) aContext.getConfigParameterValue("NumberOfNGram");
+    numberOfNGram = Integer.parseInt(aContext.getConfigParameterValue("NumberOfNGram").toString());
   }
 
   public void process(JCas aJCas) {

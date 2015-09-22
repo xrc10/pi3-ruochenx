@@ -3,8 +3,8 @@
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>  <annotatorImplementationName>annotator.NGramAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>nGramAnnotator</name>
-    <description/>
+    <name>NGram Annotator</name>
+    <description>Reads InputDocument and Token  type annotation. With parameter NumberOfNGram indicating the length of n-grams, this annotator extracts tokens with specific length within sentence.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters>
@@ -20,13 +20,13 @@
       <nameValuePair>
         <name>NumberOfNGram</name>
         <value>
-          <integer>2</integer>
+          <integer>1</integer>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
-        <import location="/home/ruochenx/git/pi3-ruochenx/pi3-ruochenx/src/main/resources/typeSystem.xml"/>
+        <import name="typeSystem"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>

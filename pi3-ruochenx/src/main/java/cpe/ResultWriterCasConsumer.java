@@ -89,7 +89,7 @@ public class ResultWriterCasConsumer extends CasConsumer_ImplBase {
           out.println(rankedAnswerScore.getPrecision());
           for(int i=0; i<rankedAnswerScore.getRankedListOfAnswerScore().size(); i++) {
             AnswerScore answerScore = (AnswerScore) rankedAnswerScore.getRankedListOfAnswerScore().get(i);
-            out.println("A" + answerScore.getAnswer().getId() + " " + answerScore.getScore());
+            out.print("A" + answerScore.getAnswer().getId() + " " + answerScore.getScore() + "\n");
           }
         }
         out.close();

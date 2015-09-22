@@ -3,15 +3,16 @@
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>  <annotatorImplementationName>annotator.EvaluationAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>evaluationAnnotator</name>
-    <description>This annotator takes AnswerScores as input and generates a RankedAnswerScore instance.</description>
+    <name>Evaluation Annotator</name>
+    <description>This annotator takes AnswerScore as input and generates a RankedAnswerScore instance. The RankedAnswerScore basicly store the precision computed by this annotator and a ranked list of AnswerScore.
+</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>
     <configurationParameterSettings/>
     <typeSystemDescription>
       <imports>
-        <import location="/home/ruochenx/git/pi3-ruochenx/pi3-ruochenx/src/main/resources/typeSystem.xml"/>
+        <import name="typeSystem"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>

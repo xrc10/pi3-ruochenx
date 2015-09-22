@@ -47,7 +47,7 @@
     <typeSystemDescription>
       <imports>
         <import name="org.apache.uima.examples.SourceDocumentInformation"/>
-      <import location="/home/ruochenx/git/pi3-ruochenx/pi3-ruochenx/src/main/resources/typeSystem.xml"/>
+      <import name="typeSystem"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>
